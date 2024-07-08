@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
+// #include <unistd.h>
 void	ft_sort_int_tab(int *tab, int size)
 {
-	int		contador;
 	int		posicion;
 	int		contador_posiciones;
 	int		aux;
@@ -37,7 +35,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-// int main (void)
+// int	main (void)
 // {
 // 	int array[] = {9,8,7,6,5,4,3,2,1};
 // 	int longitud = 9;

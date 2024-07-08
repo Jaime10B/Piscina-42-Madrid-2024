@@ -35,13 +35,16 @@ void	ft_rev_int_tab(int *tab, int size)
 // 	int t = 8;
 // 	ft_rev_int_tab(n,t);
 
+// 	int contdor =0;
+
 // 	char c ;
+// 	c = n[contdor] + '0';
 
 // 	for( int i=0; i<t ;i++)
 // 	{
-// 		c = n[i] + '0';
 // 		//write(1,&c,1);
-// 		printf("%d",n[i]);
-
+// 		printf("%d",n[contdor]);
+// 		contdor++;
+// 		c = n[contdor] + '0';
 // 	}
 // }
