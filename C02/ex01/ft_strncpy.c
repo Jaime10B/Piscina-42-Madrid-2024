@@ -13,7 +13,7 @@
 // #include <unistd.h>
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int		len;
+	unsigned int		len;
 
 	len = 0;
 	while (len < n)
@@ -21,7 +21,6 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[len] = src[len];
 		len++;
 	}
-	dest[len] = '\0';
 	return (dest);
 }
 
