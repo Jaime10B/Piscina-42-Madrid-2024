@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/08 19:30:15 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/09 14:04:36 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,20 @@ char	*ft_strlowcase(char *str)
 
 char	*ft_strcapitalize(char *str)
 {
-	
 	int		contador;
 
 	ft_strlowcase(str);
 	contador = 0;
 	while (str[contador])
 	{
-		if ((contador == 0) || (!(str[contador - 1] >= 'a' && str[contador - 1] <= 'z') && 
-			!(str[contador - 1] >= 'A' && str[contador - 1] <= 'Z') && 
-			!(str[contador - 1] >= '0' && str[contador - 1] <= '9')))
-			{
-				if(str[contador] >= 'a' && str[contador] <= 'z')
-					str[contador] = str[contador] - 32;
-			}
+		if ((contador == 0)
+			|| (!(str[contador - 1] >= 'a' && str[contador - 1] <= 'z')
+				&& !(str[contador - 1] >= 'A' && str[contador - 1] <= 'Z')
+				&& !(str[contador - 1] >= '0' && str[contador - 1] <= '9')))
+		{
+			if (str[contador] >= 'a' && str[contador] <= 'z')
+				str[contador] = str[contador] - 32;
+		}
 		contador++;
 	}
 	return (str);
@@ -51,7 +51,6 @@ char	*ft_strcapitalize(char *str)
 // {
 // 	char str1[] = "a aaAAAAA   iuui322a";
 //     char str2[] = "Ad dsD";
-//     char str3[] = "salut, comment tu vas ? 42mots quarante—deux; cinquante+et+un";
 
 //     printf("%s\n", ft_strcapitalize(str1));
 //     printf("%s\n", ft_strcapitalize(str2));
