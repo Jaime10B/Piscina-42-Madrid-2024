@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/09 19:00:26 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/09 18:31:59 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned	int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include <stdio.h>
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int		counter;
-	unsigned int		lengh;
 
 	counter = 0;
-	lengh = 0;
-	while (counter < size - 1 && src[counter ] != '\0')
+	while ((s1[counter] || s2[counter]) && (counter <= n))
 	{
-		dest[counter] = src[counter];
-		counter++;
+		if (s1[counter] != s2[counter])
+			return (s1[counter] - s2[counter]);
 	}
-	dest[counter - 1] = '\0';
-	while (*src)
-	{
-		lengh++;
-		src++;
-	}
-	return (lengh);
+	return (0);
+}
+
+int	main(void)
+{
+	char* s1 = "a";
+	char* s2 = "abfewgr";
+	printf("%d",ft_strncmp(s1,s2));
 }

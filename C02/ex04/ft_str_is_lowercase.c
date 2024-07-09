@@ -6,15 +6,13 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/08 17:28:07 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/09 18:52:49 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 int	ft_str_is_lowercase(char *str)
 {
-	if (*str == '\0')
-		return (1);
 	while (*str)
 	{
 		if (!(*str >= 'a' && *str <= 'z'))
