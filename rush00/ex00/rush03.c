@@ -18,10 +18,10 @@ void	comprobar(int f, int c, int cont_f, int cont_c)
 {
 	if ((cont_f == 1) || (cont_f == f))
 	{
-		if (cont_c == c)
-			ft_putchar('C');
-		else if (cont_c == 1)
+		if (cont_c == 1)
 			ft_putchar('A');
+		else if (cont_c == c)
+			ft_putchar('C');
 		else
 			ft_putchar('B');
 	}

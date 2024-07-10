@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/10 18:32:20 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/10 19:25:17 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	unsigned int		counter;
-
-	counter = 0;
-	while ((s1[counter] || s2[counter]) && (counter < n))
+	unsigned int		counter_src;
+	unsigned int		counter_dest;
+	
+	counter_src = 0;
+	counter_dest = 0;
+	while (dest[counter_dest])
+		counter_dest++;
+	while(src[counter_src] && (counter_src < nb))
 	{
-		if (s1[counter] != s2[counter])
-			return (s1[counter] - s2[counter]);
-		counter++;
+		dest[counter_dest + counter_src] = src[counter_src];
+		counter_src++;
 	}
-	return (0);
+	dest[counter_dest + counter_src] = '\0';
+	return(dest);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	char* s1 = "a";
-// 	char* s2 = "abfewgr";
-// 	printf("%d",ft_strncmp(s1,s2,3));
+// 	char *src = "Holaaaa";
+// 	char dest[20] = "Mami ";
+// 	printf("%s", ft_strncat(dest, src, 9));
 // }
