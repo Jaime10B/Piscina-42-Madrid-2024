@@ -1,33 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/11 14:12:04 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/12 12:55:51 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-int	ft_strcmp(char *s1, char *s2)
-{
-	int		counter;
+// #include <unistd.h>
 
-	counter = 0;
-	while (s1[counter] || s2[counter])
-	{
-		if (s1[counter] != s2[counter])
-			return (s1[counter] - s2[counter]);
-		counter++;
-	}
-	return (0);
+void	ft_printnumber(int n)
+{
+	char	c;
+
+	c = n + '0';
+	write(1, &c, 1);
 }
 
-// int	main(void)
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_printnumber(nb % 10);
+}
+
+// int main(void)
 // {
-// 	char* s1 = "a";
-// 	char* s2 = "abfewgr";
-// 	printf("%d",ft_strcmp(s1,s2));
+// 	ft_putnbr(46778);
 // }
