@@ -6,7 +6,7 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/15 13:51:42 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/15 20:19:01 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ void	ft_putnbr_base(int nbr, char *base)
 	n = nbr;
 	while (base[len])
 		len++;
-	if (!(base[0] == 0 || base[1] == 0
-			|| only_once(base, 0) == 0 || check_sign(base) == 0))
+	if ((len < 2 || !only_once(base, 0) || !check_sign(base)))
 	{
 		if (nbr < 0)
 		{

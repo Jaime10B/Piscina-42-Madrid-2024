@@ -6,7 +6,7 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/12 13:49:06 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/16 13:40:32 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,14 @@ int	ft_atoi(char *str)
 {
 	int		counter;
 	int		signo;
-	int		numero;
+	long	numero;
 
 	counter = 0;
 	signo = 1;
 	numero = 0;
-	while (ft_isspace(&str[counter])
-		|| str[counter] == 45 || str[counter] == 43)
+	while (ft_isspace(&str[counter]))
+		counter++;
+	while (str[counter] == 45 || str[counter] == 43)
 	{
 		if (str[counter] == 45)
 			signo = signo * -1;
@@ -47,16 +48,19 @@ int	ft_atoi(char *str)
 	}
 	while (ft_isint(&str[counter]))
 	{
-		numero = numero * 10;
-		numero = numero + (str[counter] - '0');
+		numero = numero * 10 + (str[counter] - '0');
 		counter++;
 	}
-	numero = numero * signo;
-	return (numero);
+	return (numero * signo);
 }
 
 // int main(void)
 // {
-// 	//printf("%d", ft_isspace(" "));
-// 	printf("%d", ft_atoi("  ---+--+1234ab567"));
+//     printf("%d\n", ft_atoi(" ---+--+1234ab567")); // Esperado: -1234
+//     printf("%d\n", ft_atoi("  ----+2147483648k67"));
+//     printf("%d\n", ft_atoi("  +++--++-789 ")); // Esperado: -789
+//     printf("%d\n", ft_atoi("  1234 ")); // Esperado: 1234
+//     printf("%d\n", ft_atoi("@@18:678:87")); // Esperado: 
+
+//     return 0;
 // }

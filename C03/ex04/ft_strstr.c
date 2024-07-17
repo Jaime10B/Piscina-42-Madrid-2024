@@ -6,53 +6,51 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/12 14:09:17 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/17 12:17:05 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include <stdio.h>
+// #include <string.h>
 
-char	*avoid_morethan25lines_error(char *str, char *to_find,
-	int len_tofind, int len_finded)
+
+int	find_value(char *main_string, char *substring)
 {
-	int		counter;
+	int	index;
 
-	counter = 0;
-	while (to_find[len_tofind])
-		len_tofind++;
-	if (len_tofind == 0)
-		return (&str[0]);
-	while (str[counter])
+	index = 0;
+	while (substring[index] != '\0')
 	{
-		if (str[counter] == to_find[len_finded])
-		{
-			if (len_tofind -1 == len_finded
-				&& str[counter - 1] == to_find[len_finded -1])
-				return (&str[counter - len_finded]);
-			else
-				len_finded++;
-		}
-		else
-			len_finded = 0;
-		counter++;
+		if (substring[index] != main_string[index])
+			return (0);
+		index++;
 	}
-	return (0);
+	return (1);
 }
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int		len_tofind;
-	int		len_finded;
+	int	i;
 
-	len_tofind = 0;
-	len_finded = 0;
-	return (avoid_morethan25lines_error(str,
-			to_find, len_tofind, len_finded));
+	i = 0;
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[i] != '\0')
+	{
+		if (str[i] == to_find[0])
+		{
+			if (find_value(str + i, to_find))
+				return (str + i);
+		}
+		i++;
+	}
+	return (NULL);
 }
 
 // int main(void)
 // {
 // 	char str[] = "mejoertertejoreeeee";
-// 	char tofind[] = "jor";
-// 	printf("%s", ft_strstr(str, tofind));
+// 	char tofind[] = "";
+// 	printf("%s\n", ft_strstr(str, tofind));
+// 	printf("%s", strstr(str, tofind));
 // }

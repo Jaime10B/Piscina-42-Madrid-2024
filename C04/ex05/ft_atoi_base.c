@@ -6,7 +6,7 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/15 18:47:40 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/16 13:24:23 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,13 @@ int	ft_atoi_base(char *str, char *base)
 		len++;
 	if (len < 2 || !only_once(base, 0) || !check_sign(base))
 		return (0);
-	while (*str == '-' || *str == '+' || *str == 32
-		|| *str == '\f' || *str == '\n'
+	while (*str == 32 || *str == '\f' || *str == '\n'
 		|| *str == '\r' || *str == '\t' || *str == '\v')
+		str++;
+	while (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
-			sign = -1;
+			sign *= -1;
 		str++;
 	}
 	n = logic(str, base, len);
