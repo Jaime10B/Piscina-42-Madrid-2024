@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+#include <stdio.h>
 #include <unistd.h>
 
 int	only_once(char *base, int position)
@@ -100,7 +100,7 @@ int	ft_atoi_base(char *str, char *base)
 	return (n * sign);
 }
 
-// int	main(void)
-// {
-// 	printf("%d", ft_atoi_base("11", "0123456789ABCDEF"));
-// }
+int	main(void)
+{
+	printf("%d", ft_atoi_base("11", "0123456789ABCDEF"));
+}
