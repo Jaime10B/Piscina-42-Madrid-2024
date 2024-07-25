@@ -6,13 +6,12 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/17 12:17:05 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/23 12:31:21 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 // #include <string.h>
-
 
 int	find_value(char *main_string, char *substring)
 {

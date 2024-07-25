@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/19 12:53:46 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:32:03 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 int	ft_strlen(char *str)
 {
-	int len = 0;
+	int		len;
+
+	len = 0;
 	while (str[len])
 		len++;
 	return (len);
 }
 
-int ft_total_len(int size, char **strs, char *sep)
+int	ft_total_len(int size, char **strs, char *sep)
 {
 	int		i;
 	int		j;
@@ -43,13 +45,15 @@ int ft_total_len(int size, char **strs, char *sep)
 			total_len += sep_len;
 		i++;
 	}
-	total_len++; //for the null terminator
+	total_len++;
 	return (total_len);
 }
 
 void	ft_strcpy(char *dest, char *src, int *index)
 {
-	int i = 0;
+	int		i;
+
+	i = 0;
 	while (src[i])
 	{
 		dest[*index] = src[i];

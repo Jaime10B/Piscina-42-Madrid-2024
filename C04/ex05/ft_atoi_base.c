@@ -6,7 +6,7 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/16 13:24:23 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/23 12:32:50 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int	ft_atoi_base(char *str, char *base)
 	return (n * sign);
 }
 
-int	main(void)
-{
-	printf("%d", ft_atoi_base("11", "0123456789ABCDEF"));
-}
+// int	main(void)
+// {
+// 	printf("%d", ft_atoi_base("11", "0123456789ABCDEF"));
+// }

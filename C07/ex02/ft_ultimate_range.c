@@ -6,7 +6,7 @@
 /*   By: jdiez-bu <jdiez-bu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:09:41 by jdiez-bu          #+#    #+#             */
-/*   Updated: 2024/07/19 12:53:46 by jdiez-bu         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:29:06 by jdiez-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_ultimate_range(int **range, int min, int max)
 	}
 	array = malloc((max - min) * sizeof(int));
 	if (!array)
-		return(-1);
+		return (-1);
 	i = 0;
 	while (i < (max - min))
 	{
